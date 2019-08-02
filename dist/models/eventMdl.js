@@ -7,11 +7,11 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const mongoose_paginate_1 = __importDefault(require("mongoose-paginate"));
 const Schema = mongoose_1.default.Schema;
 const eventModel = new Schema({
-    category: {
-        type: Schema.Types.ObjectId,
-        ref: 'Category',
-        required: true
-    },
+    // category: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Category',
+    //     required: true
+    // },
     created_at: {
         type: Date,
         default: Date.now
@@ -54,6 +54,9 @@ const eventModel = new Schema({
     },
     runners: [
         {
+            category: {
+                type: String
+            },
             distance: {
                 type: String
             },

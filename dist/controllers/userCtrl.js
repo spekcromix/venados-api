@@ -20,18 +20,17 @@ class UserController {
                 const body = req.body;
                 // return console.log(body)
                 const userN = new userMdl_1.default({
-                    address: body.address,
-                    age: body.age,
                     birthDate: body.birthDate,
                     cellPhone: body.cellPhone,
                     city: body.city,
                     cPostal: body.cPostal,
-                    colony: body.colony,
                     email: body.email,
                     firstName: body.firstName,
                     lastName: body.lastName,
                     password: bcryptjs_1.default.hashSync(body.password, 10),
-                    state: body.state
+                    sex: body.sex,
+                    state: body.state,
+                    team: body.team
                 });
                 const user = yield userMdl_1.default.create(userN);
                 res.status(201).json({ ok: true, user });

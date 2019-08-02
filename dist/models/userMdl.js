@@ -12,12 +12,10 @@ const rolesValidos = {
 const Schema = mongoose_1.default.Schema;
 const userModel = new Schema({
     address: {
-        type: String,
-        required: [true, 'El Domicilio es requerido'],
+        type: String
     },
     age: {
-        type: String,
-        required: [true, 'La Edad es requerida'],
+        type: String
     },
     birthDate: {
         type: Date,
@@ -31,13 +29,15 @@ const userModel = new Schema({
         type: String,
         required: [true, 'La Ciudad es requerida']
     },
+    country: {
+        type: String
+    },
     cPostal: {
         type: String,
         required: [true, 'El Codigo Postal es requerido']
     },
     colony: {
-        type: String,
-        required: [true, 'La Colonia es requerida']
+        type: String
     },
     created_at: {
         type: Date,
@@ -62,6 +62,10 @@ const userModel = new Schema({
         type: String,
         required: [true, 'Los Apellidos son requeridos']
     },
+    paid: {
+        type: Boolean,
+        default: false
+    },
     password: {
         type: String,
         required: [true, 'La Contraseña es requerida']
@@ -71,6 +75,10 @@ const userModel = new Schema({
         default: 'USER',
         enum: rolesValidos
     },
+    sex: {
+        type: String,
+        required: [true, 'El Sexo es requerido']
+    },
     state: {
         type: String,
         required: [true, 'El Estado es requerido']
@@ -78,6 +86,9 @@ const userModel = new Schema({
     status: {
         type: Boolean,
         default: true
+    },
+    team: {
+        type: String
     }
 });
 userModel.methods.toJSON = function () {
